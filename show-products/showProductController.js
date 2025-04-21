@@ -3,8 +3,21 @@ import { buildProduct, buildNoProductAdvice } from "./showProductView.js"
 
 export async function showProductsController (container) {
 
-  const products = await getProducts()
-  drawProducts(products, container)
+  try {
+    const event = new CustomEvent("load-products-started")
+    container.dispatchEvent(event)
+    const products = await getProducts()
+    drawProducts(products, container)
+
+  } catch (error) {
+    const event = new CustomEvent("load-products-error", {
+      detail: error.message
+    })
+    container.dispatchEvent(event)
+  } finally {
+    const event = new CustomEvent("load-products-finished")
+    container.dispatchEvent(event)
+  }
 
 }
 
