@@ -32,6 +32,7 @@
           type="email"
           id="email"
           name="email"
+          pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/"
           required
         />
       </div>
@@ -53,8 +54,8 @@
         <input 
           class="w-full mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
           type="password"
-          id="confirm-password"
-          name="confirm-password"
+          id="password-confirm"
+          name="password-confirm"
           minlength="6"
           required
         />
@@ -67,6 +68,6 @@
     </form>
   </div>
 
-  <script type="module" src=""></script>
+  <script type="module" src="../register.js"></script>
 </body>
 </html>

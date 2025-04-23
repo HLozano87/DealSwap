@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   container.addEventListener('load-products-started', () => {
     show()
-    showNotification('Iniciando la carga de productos...', 'started')
+    // showNotification('Iniciando la carga de productos...', 'started')
   })
   container.addEventListener('load-products-finished', () => {
     hide()

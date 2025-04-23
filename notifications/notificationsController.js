@@ -9,18 +9,16 @@ export function notificationsController(notifications) {
     newNotifications.innerHTML = buildNotification(message, type)
     
     notifications.appendChild(newNotifications)
-  
+
+    const closeBtn = newNotifications.querySelector("button")
+    
     const removeNotification = () => {
       newNotifications.remove()
     }
+    closeBtn.addEventListener('click', removeNotification)
 
-    if(type === 'started') {
-      setTimeout(removeNotification, 4000)
-    }
-    if(type === 'finished') {
-      setTimeout(removeNotification, 2000)
-    }
-
+    setTimeout(removeNotification, 2000)
+    
   }
 
   return { showNotification }
