@@ -1,0 +1,21 @@
+.notifications {
+  margin-top: 10px;
+  padding: 0.5rem;
+  border: solid 1px;
+}
+
+.notifications.success,
+.notifications.error {
+  border-radius: 40%;
+  text-align: center;
+}
+
+.notifications.success {
+  background-color: lightcyan;
+  border-color: green;
+}
+
+.notifications.error {
+  background-color: lightcoral;
+  border-color: red;
+}

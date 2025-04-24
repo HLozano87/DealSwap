@@ -1,1 +1,35 @@
-{"users":[],"products":[{"name":"Laptop Pro 15","description":"A high-performance laptop with 15-inch display and 512GB SSD.","price":100,"isPurchase":false},{"name":"Smartphone X","description":"Latest generation smartphone with stunning display and advanced camera.","price":45,"isPurchase":true},{"name":"Wireless Headphones","description":"Noise-cancelling over-ear headphones with long battery life.","price":200,"isPurchase":false},{"name":"Smartwatch Series 5","description":"Feature-rich smartwatch with health tracking and notifications.","price":400,"isPurchase":true},{"name":"Tablet Plus","description":"10-inch tablet with high-resolution display and 128GB storage.","price":67,"isPurchase":false}]}
+{
+  "users": [],
+  "products": [
+    {
+      "name": "Laptop Pro 15",
+      "description": "A high-performance laptop with 15-inch display and 512GB SSD.",
+      "price": 100,
+      "isPurchase": false
+    },
+    {
+      "name": "Smartphone X",
+      "description": "Latest generation smartphone with stunning display and advanced camera.",
+      "price": 45,
+      "isPurchase": true
+    },
+    {
+      "name": "Wireless Headphones",
+      "description": "Noise-cancelling over-ear headphones with long battery life.",
+      "price": 200,
+      "isPurchase": false
+    },
+    {
+      "name": "Smartwatch Series 5",
+      "description": "Feature-rich smartwatch with health tracking and notifications.",
+      "price": 400,
+      "isPurchase": true
+    },
+    {
+      "name": "Tablet Plus",
+      "description": "10-inch tablet with high-resolution display and 128GB storage.",
+      "price": 67,
+      "isPurchase": false
+    }
+  ]
+}
