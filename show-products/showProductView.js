@@ -1,13 +1,14 @@
 
 export const buildProduct = (product) => {
-  const isPurchase = product.isPurchase ? 'Compra' : 'Venta'
   let productView = `
-    <p>${product.name}</p>
-    <p>${product.description}</p>
-    <p>${product.price}</p>
-    <p>${isPurchase}</p>
+    <div class="p-4 space-y-2">
+          <a href="card.html?id=${product.id}"><h3 class="text-lg font-semibold text-emerald-800">${product.name}</h3></a>
+          <p class="text-gray-600 text-sm">${product.description}</p>
+          <p class="text-gray-900 font-bold">${product.price} €</p>
+          <span class="inline-block px-2 py-1 text-xs font-medium rounded-full ${product.isPurchase ? 'bg-emerald-100 text-emerald-800' : 'bg-blue-100 text-blue-800'
+    }">${product.isPurchase ? 'Compra' : 'Venta'}</span>
+    </div>
   `
-  
   return productView
 }
 

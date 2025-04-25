@@ -1,3 +1,4 @@
+import { REGEXP } from "../utils/constants.js"
 import { createUser } from "./registerModel.js"
 
 export const registerController = (form) => {
@@ -18,7 +19,7 @@ export const registerController = (form) => {
     const passwordConfirm = passwordConfirmElement.value
     const errors = []
 
-    const emailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+    const emailRegExp = new RegExp(REGEXP)
 
     if (!emailRegExp.test(email)) {
       errors.push('El formato del email no es correcto.')

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
   container.addEventListener('load-products-finished', () => {
     hide()
-    showNotification('Carga de productos finalizada.', 'finished')
+    // showNotification('Carga de productos finalizada.', 'finished')
   })
   container.addEventListener('load-products-error', (event) => {
     const errorMessage = event.detail

@@ -17,7 +17,7 @@ export function notificationsController(notifications) {
     }
     closeBtn.addEventListener('click', removeNotification)
 
-    setTimeout(removeNotification, 2000)
+    setTimeout(removeNotification, 3000)
     
   }
 
