@@ -20,14 +20,38 @@ export const createProductController = (form) => {
     const productPicture = productPictureElement.value
 
     try {
-      await createProduct(productName, productDescription, productPrice, productType, productPicture)
-      setTimeout(() => {
-        window.location = '/'
-      }, 1000);
-    } catch (error) {
-      //TODO event error
-      alert(error.message)
-    }
+      await handleCreateProduct(productName, productDescription, productPrice, productType, productPicture, form)
 
+      setTimeout(window.location = '/', 2000)
+    } catch (error) {
+      const event = new CustomEvent('create-product-error', {
+        detail: error.message
+      })
+      form.dispatchEvent(event)
+    } 
   })
+}
+
+const handleCreateProduct = async (productName, productDescription, productPrice, productType, productPicture, form) => {
+  const event = new CustomEvent('create-product-started')
+  form.dispatchEvent(event)
+  try {
+    await createProduct(productName, productDescription, productPrice, productType, productPicture)
+    const event = new CustomEvent('create-product-success', {
+      detail: {
+        message: 'Producto creado correctamente.',
+        type: 'success'
+      }
+    })
+    form.dispatchEvent(event)
+  } catch (error) {
+    const event = new CustomEvent('create-product-error', {
+      detail: error.message
+    })
+    form.dispatchEvent(event)
+
+  } finally {
+    const event = new CustomEvent('create-product-finished')
+    form.dispatchEvent(event)
+  }
 }

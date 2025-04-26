@@ -19,5 +19,5 @@ export const buildProduct = (product) => {
 }
 
 export const buildNoProductAdvice = () => {
-  return '<h3>Lo siento, no hay productos que mostrar.</h3>'
+  return '<h3 class="block text-lg italic font-medium text-gray-700">Lo siento, no hay productos que mostrar.</h3>'
 }

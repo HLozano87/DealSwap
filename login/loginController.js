@@ -30,7 +30,7 @@ export function loginController(loginForm) {
       localStorage.setItem('token', token)
       const event = new CustomEvent('login-success', {
         detail: {
-          message: 'Has hecho login correctamente.✅ ',
+          message: 'Has hecho login correctamente.',
           type: 'success'
         }
       })
