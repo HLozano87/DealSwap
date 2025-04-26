@@ -41,6 +41,8 @@ export const registerController = (form) => {
   })
 
   const handleCreateUser = async (name, email, password, form) => {
+    const event = new CustomEvent('register-started')
+    form.dispatchEvent(event)
     try {
       await createUser(name, email, password)
       const event = new CustomEvent('register-success', {
@@ -57,6 +59,9 @@ export const registerController = (form) => {
       const event = new CustomEvent('register-error', {
         detail: error
       })
+      form.dispatchEvent(event)
+    } finally {
+      const event = new CustomEvent('register-finished')
       form.dispatchEvent(event)
     }
   }

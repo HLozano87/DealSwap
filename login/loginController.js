@@ -12,6 +12,8 @@ export function loginController(loginForm) {
     const userPassword = userPasswordElement.value
 
     const emailRegExp = new RegExp(REGEXP.email)
+
+    const errorMsg = ''
     
     //TODO especificar error si es de email o password
     if (!emailRegExp.test(userEmail)) {
@@ -25,6 +27,8 @@ export function loginController(loginForm) {
   })
 
   const handleLoginUser = async (userEmail, userPassword) => {
+    const event = new CustomEvent('login-started')
+    loginForm.dispatchEvent(event)
     try {
       const token = await loginUser(userEmail, userPassword)
       localStorage.setItem('token', token)
@@ -35,10 +39,14 @@ export function loginController(loginForm) {
         }
       })
       loginForm.dispatchEvent(event)
+      setTimeout(window.location = '/', 2000)
     } catch (error) {
       const event = new CustomEvent('login-error', {
         detail: error.message
       })
+      loginForm.dispatchEvent(event)
+    } finally {
+      const event = new CustomEvent('login-finished')
       loginForm.dispatchEvent(event)
     }
   }

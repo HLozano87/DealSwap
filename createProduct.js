@@ -17,13 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const createProductForm = document.querySelector("form")
 
-  createProductForm.addEventListener('create-product-started', () => {
-    show()
-  })
-
-  createProductForm.addEventListener('create-product-finished', () => {
-    hide()
-  })
+  createProductForm.addEventListener('create-product-started', show)
+  createProductForm.addEventListener('create-product-finished', hide)
 
   createProductForm.addEventListener('create-product-error', (event) => {
     const message = event.detail
