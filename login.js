@@ -1,4 +1,4 @@
-import { loginController } from "./loginUser/loginController.js"
+import { loginController } from "./login/loginController.js"
 import { notificationsController } from "./notifications/notificationsController.js"
 
 document.addEventListener("DOMContentLoaded", () => {

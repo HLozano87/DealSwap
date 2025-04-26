@@ -1,5 +1,5 @@
 import { notificationsController } from "./notifications/notificationsController.js"
-import { registerController } from "./registerUser/registerController.js"
+import { registerController } from "./register/registerController.js"
 
 
 
