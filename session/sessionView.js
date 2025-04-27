@@ -1,24 +1,30 @@
 
 export const buildUnauthorizedSession = () => {
   return `
-    <div id="container">
-      <h1>Bienvenido a Wallapop-Practice</h1>
-      <p>Por favor, inicia sesión para continuar.</p>
-      <a href="/templates/login.html" class="login">Iniciar sesión</a>
-      <a href="/templates/register.html" class="register">Registrarse</a>
-    </div>
+    <a href="/" class="hover:text-emerald-600 transition">Inicio</a>
+    <a href="/templates/register.html" class="hover:text-emerald-600 transition">Registro</a>
+    <a href="/templates/login.html" class="hover:text-emerald-600 transition">Login</a>
   `
 }
 
 export const buildAuthorizedSession = () => {
   return `
-    <div id="container">
-      <h1>Wallapop Products</h1>
-      <p>Ya puedes comprar y vender productos.</p>
-      <br>
-      <a href="/templates/create-product.html" class="btn">Crear producto</a>
-      <button class="logout">Cerrar sesión</button>
-    </div>
+    <a href="/" class="hover:text-emerald-600 transition">Inicio</a>
+    <a href="/templates/create-product.html" class="hover:text-emerald-600 transition">Crear producto</a>
+    <button class="logout hover:text-emerald-600 transition">Cerrar sesión</button>
   `
 }
 
+export const buildAuthorizedContainer = () => {
+  return `
+      <h1 class="text-3xl font-bold text-center text-gray-800">Products</h1>
+      <p class="text-center text-gray-600 mt-4">Ya puedes comprar y vender productos.</p>
+    `
+}
+
+export const buildUnathorizedContainer = () => {
+  return `
+      <h1 class="text-3xl font-bold text-center text-gray-800">Products</h1>
+      <p class="text-center text-gray-600 mt-4">Por favor, <a href="/templates/login.html">inicia sesión</a> para continuar.</p>
+    `
+}

@@ -7,55 +7,74 @@
   <link rel="stylesheet" href="../style/loading.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body>
+  <header class="sticky top-0 z-40 w-full bg-white shadow-md">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 p-4 rounded-b-2xl">
+  
+      <h1 class="text-2xl font-bold text-emerald-600">
+        <a href="/">Wallapop Practice</a>
+      </h1>
+  
+      <nav id="navbar"
+        class="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4 text-gray-700 text-sm font-medium">
+        <ul class="flex flex-col sm:flex-row gap-4">
+          <li><a href="/" class="hover:text-emerald-600 transition">Inicio</a></li>
+          <li><a href="/templates/register.html" class="hover:text-emerald-600 transition">Registro</a></li>
+          <li><a href="/templates/login.html" class="hover:text-emerald-600 transition">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <div class="w-full max-w-sm p-8 bg-white rounded-2xl shadow-lg">
-    <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Login</h2>
+  <main class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-sm p-8 bg-white rounded-2xl shadow-lg">
+      <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Login</h2>
 
-    <form action="#" method="POST" class="space-y-5">
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-        <input 
-          class="w-full mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-          type="email"
-          id="email"
-          name="email"
-          minlength="6"
-          required
-        />
-      </div>
+      <form action="#" method="POST" class="space-y-5">
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input 
+            class="w-full mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="email"
+            id="email"
+            name="email"
+            minlength="6"
+            required
+          />
+        </div>
 
-      <div>
-        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-        <input 
-          class="w-full mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-          type="password"
-          id="password"
-          name="password"
-          required
-        />
-      </div>
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input 
+            class="w-full mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="password"
+            id="password"
+            name="password"
+            required
+          />
+        </div>
 
-      <!-- <div class="flex items-center justify-between text-sm">
-        <label class="flex items-center">
-          <input type="checkbox" class="form-checkbox mr-2">
-          Remember me
-        </label>
-        <a href="#" class="text-blue-600 hover:underline">¿Forgot your password?</a>
-      </div> -->
-      <div id="notifications"></div>
-      <div class="loader hidden"></div>
-      <button type="submit"
-        class="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition duration-300">
-        Submit
-      </button>
-    </form>
+        <!-- <div class="flex items-center justify-between text-sm">
+          <label class="flex items-center">
+            <input type="checkbox" class="form-checkbox mr-2">
+            Remember me
+          </label>
+        </div> -->
+        <div id="notifications"></div>
+        <div class="loader hidden"></div>
+        <button type="submit"
+          class="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition duration-300">
+          Submit
+        </button>
+      </form>
 
-    <p class="mt-6 text-sm text-center text-gray-600">
-      ¿You do not have an account?
-      <a href="/templates/register.html" class="text-blue-600 hover:underline">Create Account</a>
-    </p>
-  </div>
+      <p class="mt-6 text-sm text-center text-gray-600">
+        ¿You do not have an account?
+        <a href="/templates/register.html" class="text-blue-600 hover:underline">Create Account</a>
+      </p>
+    </div>
+  </main>
+  
 
   <script type="module" src="../login.js"></script>
 </body>
