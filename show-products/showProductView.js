@@ -2,7 +2,7 @@
 export const buildProduct = (product) => {
   let productView = `
     <div class="bg-white p-6 rounded-2xl shadow-md flex flex-col space-y-3 hover:shadow-lg transition">
-      <img src="${product.picture.id}" alt="${product.name}" class="w-full h-40 object-cover rounded-lg mb-4" />
+      <img src="${product.picture}" alt="${product.name}" class="w-full h-40 object-cover rounded-lg mb-4" />
       <a href="/templates/product-detail.html?id=${product.id}">
         <h3 class="text-lg font-semibold text-emerald-800">${product.name}</h3>
       </a>

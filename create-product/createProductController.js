@@ -17,7 +17,8 @@ export const createProductController = (form) => {
     const productType = productTypeElement.value
 
     const productPictureElement = form.querySelector('#picture')
-    const productPicture = productPictureElement.value
+    const productPictureInputValue = productPictureElement.value.trim()
+    const productPicture = productPictureInputValue || `https://picsum.photos/300/200?random=${Math.floor(Math.random() * 1000)}`
 
     try {
       await handleCreateProduct(productName, productDescription, productPrice, productType, productPicture, form)
