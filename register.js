@@ -3,7 +3,6 @@ import { registerController } from "./register/registerController.js"
 import { loadingController } from "./loading/loadingController.js"
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
   
   const registerForm = document.querySelector("form")

@@ -1,6 +1,7 @@
 import { createProductController } from "./create-product/createProductController.js"
 import { loadingController } from "./loading/loadingController.js"
 import { notificationsController } from "./notifications/notificationsController.js"
+import { sessionController } from "./session/sessionController.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   const notifications = document.querySelector("#notifications")
@@ -16,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       window.location = '/'
     }, 2000)
+  } else {
+    sessionController()
   }
 
   const createProductForm = document.querySelector("form")

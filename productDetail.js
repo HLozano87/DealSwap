@@ -1,10 +1,13 @@
 import { productDetailController } from "./product-detail/productDetailController.js"
 import { notificationsController } from "./notifications/notificationsController.js"
 import { loadingController } from "./loading/loadingController.js"
+import { sessionController } from "./session/sessionController.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchParams = new URLSearchParams(window.location.search)
   const productId = searchParams.get('id')
+
+  const token = localStorage.getItem('token')
 
   if (productId) {
     const productContainer = document.querySelector(".products-container")
@@ -32,6 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
     
   } else {
     window.location = '/'
+  }
+  if (!token) {
+    showNotification('Debes iniciar sesion para registrar un producto.')
+    setTimeout(() => {
+      window.location = '/'
+    }, 2000)
+  } else {
+    sessionController()
   }
 
 })
