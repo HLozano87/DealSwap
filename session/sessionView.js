@@ -19,6 +19,7 @@ export const buildAuthorizedContainer = () => {
   return `
       <h1 class="text-3xl font-bold text-center text-gray-800">Products</h1>
       <p class="text-center text-gray-600 mt-4">Ya puedes comprar y vender productos.</p>
+      <button class="logout hover:text-emerald-600 transition"><a href="/templates/create-product.html" class="hover:text-emerald-600 transition">Crear producto</a></button>
     `
 }
 
