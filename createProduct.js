@@ -12,7 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem('token')
 
   if (!token) {
-    window.location = '/templates/login.html'
+    showNotification('Debes iniciar sesion para registrar un producto.')
+    setTimeout(() => {
+      window.location = '/'
+    }, 2000)
   }
 
   const createProductForm = document.querySelector("form")
