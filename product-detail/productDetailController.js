@@ -4,22 +4,6 @@ import { buildProductDetailView, buildRemoveProductButton } from "./productDetai
 
 export const productDetailController = async (productContainer, productId) => {
   
-  
-  const showRemoveProductButton = () => {
-    const removeButton = buildRemoveProductButton()
-    const card = productContainer.querySelector('.card')
-    const buttonContainer = document.createElement('div')
-    buttonContainer.className = "mt-4 flex justify-center"
-    buttonContainer.appendChild(removeButton)
-    card.appendChild(buttonContainer)
-    
-    removeButton.addEventListener('click', () => {
-      if (confirm('¿Estas seguro que quieres borrar el anuncio?')) {
-        handleDeleteProduct(productContainer, productId)
-      }
-    })
-  }
-  
   try {
     const productDetail = await getProductDetail(productId)
     productContainer.innerHTML = buildProductDetailView(productDetail)
@@ -27,14 +11,7 @@ export const productDetailController = async (productContainer, productId) => {
     const user = await getLoggedUserInfo()
 
     if (user.id === productDetail.userId) {
-      showRemoveProductButton(productId)
-      const event = new CustomEvent('detail-delete-success', {
-        detail: {
-          message: 'Anuncio borrado exitosamente.',
-          type: 'success'
-        }
-      })
-      productContainer.dispatchEvent(event)
+      showRemoveProductButton(productContainer, productId)
     }
   } catch (error) {
     const event = new CustomEvent('detail-delete-error', {
@@ -43,6 +20,21 @@ export const productDetailController = async (productContainer, productId) => {
     productContainer.dispatchEvent(event)
   }
 
+}
+
+const showRemoveProductButton = (productContainer, productId) => {
+  const removeButton = buildRemoveProductButton()
+  const card = productContainer.querySelector('.card')
+  const buttonContainer = document.createElement('div')
+  buttonContainer.className = "mt-4 flex justify-center"
+  buttonContainer.appendChild(removeButton)
+  card.appendChild(buttonContainer)
+
+  removeButton.addEventListener('click', () => {
+    if (confirm('¿Estas seguro que quieres borrar el anuncio?')) {
+      handleDeleteProduct(productContainer, productId)
+    }
+  })
 }
 
 const handleDeleteProduct = async (productContainer, productId) => {
