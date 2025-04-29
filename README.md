@@ -25,7 +25,7 @@ Start the server in sparrest.js with:
 npm start
 ```
 
-***Copy the db.json file included in this repository (Wallapop-Practice) to the sparrest.js directory, replacing the one just created in sparrest.***.
+***Copy the db.json file included in this repository (Wallapop-Practice) to the sparrest.js directory, replacing the one just created in sparrest. The project should start on port 8000 at http://localhost:8000.***
 
 Make sure that the db.json file has the following minimum structure:
 
@@ -36,4 +36,10 @@ Make sure that the db.json file has the following minimum structure:
 }
 ```
 
-Once this is done, the server will be ready and you will be able to use Wallapop-Practice.
+To start the project wallapop you can do it using live server using:
+
+```
+  npx install live-server
+``` 
+
+Once this is done, the server will be ready and you will be able to use Wallapop-Practice. **http://localhost:8080**
