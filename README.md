@@ -1,5 +1,39 @@
-# Wallapop-Practice
+# 📦 Wallapop-Practice
 
-Once this repository has been cloned, you must clone the [**sparrest**](https://github.com/kasappeal/sparrest.js) repository. 
+## ✅ Prerequisites
 
-When cloning [**sparrest**](https://github.com/kasappeal/sparrest.js) you must run the ```npm install``` command. The **db.json** file from this repository must be used with sparrest, once you have it in the directory, run the ```npm start``` command in sparrest to initialize the server and be able to use Wallapop-Practice.
+This project depends on the [**sparrest.js**](https://github.com/kasappeal/sparrest.js) repository to simulate a REST API.
+
+## ⚙️ Setup Instructions
+
+1. Clone this repository (`Wallapop-Practice`) on your computer.
+
+2. Clone also the [**sparrest.js**](https://github.com/kasappeal/sparrest.js) repository:
+
+```bash
+git clone https://github.com/kasappeal/sparrest.js
+Inside the sparrest.js directory, install the dependencies:
+```
+
+```
+cd sparrest.js
+npm install
+```
+Start the server in sparrest.js with:
+
+```
+npm start
+```
+
+***Copy the db.json file included in this repository (Wallapop-Practice) to the sparrest.js directory, replacing the one just created in sparrest.***.
+
+Make sure that the db.json file has the following minimum structure:
+
+```
+{
+  “users": [ ],
+  “products": [ ]
+}
+```
+
+Once this is done, the server will be ready and you will be able to use Wallapop-Practice.
