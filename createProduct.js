@@ -17,9 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       window.location = '/'
     }, 2000)
-  } else {
-    sessionController()
-  }
+  } 
 
   const createProductForm = document.querySelector("form")
 
