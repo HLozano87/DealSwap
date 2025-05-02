@@ -54,7 +54,7 @@ export const registerController = (form) => {
       form.dispatchEvent(event)
       setTimeout(() => {
         window.location = '/'
-      }, 4000);
+      }, 1500);
     } catch (error) {
       const event = new CustomEvent('register-error', {
         detail: error

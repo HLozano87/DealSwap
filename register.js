@@ -1,13 +1,17 @@
 import { notificationsController } from "./notifications/notificationsController.js"
 import { registerController } from "./register/registerController.js"
 import { loadingController } from "./loading/loadingController.js"
+import { buildRegisterView } from "./register/registerView.js"
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  
-  const registerForm = document.querySelector("form")
-  const notifications = document.querySelector("#notifications")
-  const loader = document.querySelector(".loader")
+
+  const pageBuildRegister = document.querySelector('#register')
+  pageBuildRegister.innerHTML = buildRegisterView()
+
+  const registerForm = pageBuildRegister.querySelector("form")
+  const notifications = pageBuildRegister.querySelector("#notifications")
+  const loader = pageBuildRegister.querySelector(".loader")
 
   const { show, hide } = loadingController(loader)
   const { showNotification } = notificationsController(notifications)

@@ -1,15 +1,18 @@
 import { createProductController } from "./create-product/createProductController.js"
 import { loadingController } from "./loading/loadingController.js"
 import { notificationsController } from "./notifications/notificationsController.js"
-import { sessionController } from "./session/sessionController.js"
+import { buildCreateProduct } from "./create-product/createProductView.js"
 
 document.addEventListener("DOMContentLoaded", () => {
-  const notifications = document.querySelector("#notifications")
-  const loader = document.querySelector(".loader")
+  
+  const pageCreateProduct = document.querySelector('#create-product')
+  pageCreateProduct.innerHTML = buildCreateProduct()
+
+  const notifications = pageCreateProduct.querySelector("#notifications")
+  const loader = pageCreateProduct.querySelector(".loader")
 
   const { showNotification } = notificationsController(notifications)
   const { show, hide } = loadingController(loader)
-
   const token = localStorage.getItem('token')
 
   if (!token) {
@@ -19,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2000)
   } 
 
-  const createProductForm = document.querySelector("form")
+
+  const createProductForm = pageCreateProduct.querySelector("form")
 
   createProductForm.addEventListener('create-product-started', show)
   createProductForm.addEventListener('create-product-finished', hide)

@@ -1,7 +1,7 @@
 import { productDetailController } from "./product-detail/productDetailController.js"
 import { notificationsController } from "./notifications/notificationsController.js"
 import { loadingController } from "./loading/loadingController.js"
-import { sessionController } from "./session/sessionController.js"
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchParams = new URLSearchParams(window.location.search)
