@@ -2,8 +2,14 @@ import { loginController } from "./login/loginController.js"
 import { notificationsController } from "./notifications/notificationsController.js"
 import { loadingController } from "./loading/loadingController.js"
 import { buildLoginView } from "./login/loginView.js"
+import { buildHeader, buildFooter } from "./templates/js/createTemplates.js"
 
 document.addEventListener("DOMContentLoaded", () => {
+  const headerElement = document.querySelector('header')
+  headerElement.innerHTML = buildHeader()
+
+  const footerElement = document.querySelector('footer')
+  footerElement.innerHTML = buildFooter()
 
   const buildPageLogin = document.querySelector('#login')
   buildPageLogin.innerHTML = buildLoginView()

@@ -1,9 +1,16 @@
 import { productDetailController } from "./product-detail/productDetailController.js"
 import { notificationsController } from "./notifications/notificationsController.js"
 import { loadingController } from "./loading/loadingController.js"
+import { buildHeader, buildFooter } from "./templates/js/createTemplates.js"
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  const headerElement = document.querySelector('header')
+  headerElement.innerHTML = buildHeader()
+
+  const footerElement = document.querySelector('footer')
+  footerElement.innerHTML = buildFooter()
+
   const searchParams = new URLSearchParams(window.location.search)
   const productId = searchParams.get('id')
 

@@ -2,8 +2,14 @@ import { createProductController } from "./create-product/createProductControlle
 import { loadingController } from "./loading/loadingController.js"
 import { notificationsController } from "./notifications/notificationsController.js"
 import { buildCreateProduct } from "./create-product/createProductView.js"
+import { buildHeader, buildFooter } from "./templates/js/createTemplates.js"
 
 document.addEventListener("DOMContentLoaded", () => {
+  const headerElement = document.querySelector('header')
+  headerElement.innerHTML = buildHeader()
+
+  const footerElement = document.querySelector('footer')
+  footerElement.innerHTML = buildFooter()
   
   const pageCreateProduct = document.querySelector('#create-product')
   pageCreateProduct.innerHTML = buildCreateProduct()

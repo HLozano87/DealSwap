@@ -1,10 +1,15 @@
 import { notificationsController } from "./notifications/notificationsController.js"
 import { registerController } from "./register/registerController.js"
 import { loadingController } from "./loading/loadingController.js"
-import { buildRegisterView } from "./register/registerView.js"
+import { buildHeader, buildFooter } from "./templates/js/createTemplates.js"
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  const headerElement = document.querySelector('header')
+  headerElement.innerHTML = buildHeader()
+
+  const footerElement = document.querySelector('footer')
+  footerElement.innerHTML = buildFooter()
 
   const pageBuildRegister = document.querySelector('#register')
   pageBuildRegister.innerHTML = buildRegisterView()
