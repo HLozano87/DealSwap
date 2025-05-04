@@ -1,6 +1,7 @@
 import { notificationsController } from "./notifications/notificationsController.js"
 import { registerController } from "./register/registerController.js"
 import { loadingController } from "./loading/loadingController.js"
+import { buildRegisterView } from "./register/registerView.js"
 import { buildHeader, buildFooter } from "./templates/js/createTemplates.js"
 
 

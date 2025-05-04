@@ -4,8 +4,8 @@ export const buildHeader = () => {
 
       <h1 class="text-2xl font-bold text-emerald-600">
         <a href="/" class="flex items-center space-x-2">
-          <img src="/assets/img/logo.webp" alt="Dealswap Logo" class="h-10">
-          <span>Dealswap</span>
+          <img src="/assets/img/logo.webp" alt="DealSwap Logo" class="h-10">
+          <span>DealSwap</span>
         </a>
       </h1>
 
@@ -27,9 +27,9 @@ export const buildFooter = () => {
 
       <div class="flex items-center gap-4 text-center sm:text-left">
         <a href="/">
-          <img src="/assets/img/logo.webp" alt="Dealswap Logo" class="h-6">
+          <img src="/assets/img/logo.webp" alt="DealSwap Logo" class="h-6">
         </a>
-        <p class="text-sm text-gray-600">&copy; 2025 Dealswap. Todos los derechos reservados.</p>
+        <p class="text-sm text-gray-600">&copy; 2025 DealSwap. Todos los derechos reservados.</p>
       </div>
 
       <nav class="flex flex-col sm:flex-row items-center gap-4 text-gray-700 text-sm font-medium">
