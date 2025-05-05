@@ -28,7 +28,7 @@ export const buildAuthorizedContainer = () => {
     `
 }
 
-export const buildUnathorizedContainer = () => {
+export const buildUnauthorizedContainer = () => {
   return `
       <h1 class="text-3xl font-bold text-center text-emerald-900">Products</h1>
       <p class="text-center text-gray-600 mt-4">Por favor, <a href="/templates/login.html">inicia sesión</a> para continuar.</p>

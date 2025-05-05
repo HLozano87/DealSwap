@@ -1,4 +1,4 @@
-import { buildAuthorizedContainer, buildAuthorizedSession, buildUnathorizedContainer, buildUnauthorizedSession } from "./sessionView.js"
+import { buildAuthorizedContainer, buildAuthorizedSession, buildUnauthorizedContainer, buildUnauthorizedSession } from "./sessionView.js"
 
 export const sessionController = (container) => {
   // const isUserLoggedIn = !!localStorage.getItem('token')
@@ -12,10 +12,11 @@ export const sessionController = (container) => {
     logoutButton.addEventListener('click', () => {
       localStorage.removeItem('token')
       sessionController(container)
+      location.reload()
     })
     container.innerHTML = buildAuthorizedContainer()
   } else {
     navbarContainer.innerHTML = buildUnauthorizedSession()
-    container.innerHTML = buildUnathorizedContainer()
+    container.innerHTML = buildUnauthorizedContainer()
   }
 }

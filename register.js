@@ -3,6 +3,7 @@ import { registerController } from "./register/registerController.js"
 import { loadingController } from "./loading/loadingController.js"
 import { buildRegisterView } from "./register/registerView.js"
 import { buildHeader, buildFooter } from "./templates/js/createTemplates.js"
+import { sessionController } from "./session/sessionController.js"
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -11,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const footerElement = document.querySelector('footer')
   footerElement.innerHTML = buildFooter()
+
+  const session = document.querySelector('.session')
 
   const pageBuildRegister = document.querySelector('#register')
   pageBuildRegister.innerHTML = buildRegisterView()
@@ -37,4 +40,5 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   registerController(registerForm)
+  sessionController(session)
 })

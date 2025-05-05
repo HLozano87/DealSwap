@@ -2,6 +2,7 @@ import { productDetailController } from "./product-detail/productDetailControlle
 import { notificationsController } from "./notifications/notificationsController.js"
 import { loadingController } from "./loading/loadingController.js"
 import { buildHeader, buildFooter } from "./templates/js/createTemplates.js"
+import { sessionController } from "./session/sessionController.js"
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const footerElement = document.querySelector('footer')
   footerElement.innerHTML = buildFooter()
+
+  const session = document.querySelector('session')
 
   const searchParams = new URLSearchParams(window.location.search)
   const productId = searchParams.get('id')
@@ -49,5 +52,5 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location = '/'
     }, 2000)
   }
-
+  sessionController(session)
 })

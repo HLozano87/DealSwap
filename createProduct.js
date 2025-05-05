@@ -3,6 +3,7 @@ import { loadingController } from "./loading/loadingController.js"
 import { notificationsController } from "./notifications/notificationsController.js"
 import { buildCreateProduct } from "./create-product/createProductView.js"
 import { buildHeader, buildFooter } from "./templates/js/createTemplates.js"
+import { sessionController } from "./session/sessionController.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   const headerElement = document.querySelector('header')
@@ -10,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const footerElement = document.querySelector('footer')
   footerElement.innerHTML = buildFooter()
+
+  const session = document.querySelector('.session')
   
   const pageCreateProduct = document.querySelector('#create-product')
   pageCreateProduct.innerHTML = buildCreateProduct()
@@ -47,4 +50,5 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   createProductController(createProductForm)
+  sessionController(session)
 })
