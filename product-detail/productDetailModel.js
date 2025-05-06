@@ -32,6 +32,30 @@ export const productRemove = async (productId) => {
   }
 }
 
+// WIP Method 
+export const productUpdate = async (productId, updatedProduct) => {
+  const token = localStorage.getItem('token')
+  if (!token) {
+    throw new Error ('No tienes acceso.')
+  }
+  const response = await fetch(`http://localhost:8000/api/products/${productId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify(updatedProduct)
+  })
+  if (response.ok) {
+    setTimeout(() => {
+      location.reload()
+    }, 1000);
+  } else {
+    const errorProduct = await response.json()
+    throw new Error(`No se pudo actualizar: ${JSON.stringify(errorProduct)}`)
+  }
+}
+
 export const getLoggedUserInfo = async () => {
   const token = localStorage.getItem('token')
 
