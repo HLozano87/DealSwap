@@ -2,11 +2,14 @@ import { loadingController } from "./loading/loadingController.js"
 import { notificationsController } from "./notifications/notificationsController.js"
 import { sessionController } from "./session/sessionController.js"
 import { showProductsController } from "./show-products/showProductController.js"
-import { buildHeader, buildFooter } from "./templates/js/createTemplates.js"
+import { buildHeader, buildFooter, buildSearch } from "./templates/js/createTemplates.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   const headerElement = document.querySelector('header')
   headerElement.innerHTML = buildHeader()
+
+  const formSearch = document.querySelector('#search')
+  formSearch.innerHTML = buildSearch()
 
   const footerElement = document.querySelector('footer')
   footerElement.innerHTML = buildFooter()

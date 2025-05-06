@@ -8,6 +8,9 @@ export const buildHeader = () => {
           <span>DealSwap</span>
         </a>
       </h1>
+      
+      <form id="search" class="flex items-center rounded-md px-3 py-2 h-10 max-w-md">
+      </form>
 
       <nav id="navbar"
         class="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4 text-gray-700 text-sm font-medium">
@@ -18,6 +21,23 @@ export const buildHeader = () => {
         </ul>
       </nav>
     </div>
+  `
+}
+
+export const buildSearch = () => {
+  return `
+    <input
+      class="w-full outline-none mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-1 focus:ring-emerald-600"
+      type="text"
+      placeholder="Buscar..."
+      name="search"
+    />
+    <button type="submit" class="ml-2 text-gray-500 hover:text-emerald-600 transition">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+    </button>
   `
 }
 
