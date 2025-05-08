@@ -25,8 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
   loginForm.addEventListener('login-finished', hide)
 
   loginForm.addEventListener('login-error', (event) => {
-    const message = event.detail
-    showNotification(message)
+    const message = event.detail.message
+    const type = event.detail.type
+    showNotification(message, type)
   })
 
   loginForm.addEventListener('login-success', (event) => {

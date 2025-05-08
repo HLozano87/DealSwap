@@ -2,7 +2,7 @@ export const getProductDetail = async (productId) => {
 
   const response = await fetch(`http://localhost:8000/api/products/${productId}?_expand=user`)
 
-  if(!response.ok) {
+  if (!response.ok) {
     throw new Error('Producto no disponible.')
   }
   const productDetail = await response.json()
@@ -36,7 +36,7 @@ export const productRemove = async (productId) => {
 export const productUpdate = async (productId, updatedProduct) => {
   const token = localStorage.getItem('token')
   if (!token) {
-    throw new Error ('No tienes acceso.')
+    throw new Error('No tienes acceso.')
   }
   const response = await fetch(`http://localhost:8000/api/products/${productId}`, {
     method: "PUT",
@@ -70,7 +70,7 @@ export const getLoggedUserInfo = async () => {
     }
   })
 
-  if(!response.ok) {
+  if (!response.ok) {
     throw new Error('El usuario no existe.')
   }
 
