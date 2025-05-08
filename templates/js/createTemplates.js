@@ -49,7 +49,7 @@ export const buildFooter = () => {
         <a href="/">
           <img src="/assets/img/logo.webp" alt="DealSwap Logo" class="h-6">
         </a>
-        <p class="text-sm text-gray-600">&copy; 2025 DealSwap. Todos los derechos reservados.</p>
+        <p class="text-sm text-gray-600">&copy; ${new Date().getFullYear()} DealSwap. Todos los derechos reservados.</p>
       </div>
 
       <nav class="flex flex-col sm:flex-row items-center gap-4 text-gray-700 text-sm font-medium">

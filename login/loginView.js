@@ -7,11 +7,12 @@ export const buildLoginView = () => {
         <div>
           <label for="email" class="block text-sm font-medium text-emerald-900">Email</label>
           <input
-            class="w-full mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-600"
+            class="w-full mt-1 px-4 text-sm text-center py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-600"
             type="email"
             id="email"
             name="email"
             minlength="6"
+            placeholder="Email"
             required
           />
         </div>
@@ -19,10 +20,11 @@ export const buildLoginView = () => {
         <div>
           <label for="password" class="block text-sm font-medium text-emerald-900">Password</label>
           <input
-            class="w-full mt-1 px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-600"
+            class="w-full mt-1 px-4 text-sm text-center py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-600"
             type="password"
             id="password"
             name="password"
+            placeholder="Password"
             required
           />
         </div>
@@ -36,8 +38,8 @@ export const buildLoginView = () => {
         <div id="notifications"></div>
         <div class="loader hidden"></div>
         <button type="submit"
-          class="w-full bg-emerald-800 text-white py-2 rounded-xl hover:bg-emerald-600 transition duration-300">
-          Submit
+          class="block mx-auto px-10 bg-emerald-800 text-white py-2 rounded-xl hover:bg-emerald-600 transition duration-300">
+          Sign In
         </button>
       </form>
 

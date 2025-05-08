@@ -12,14 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerElement = document.querySelector('footer')
   footerElement.innerHTML = buildFooter()
 
-  const session = document.querySelector('session')
-
   const searchParams = new URLSearchParams(window.location.search)
   const productId = searchParams.get('id')
-
+  
   const token = localStorage.getItem('token')
-
+  
   if (productId) {
+    const session = document.querySelector(".session")
     const productContainer = document.querySelector(".products-container")
     const notifications = document.querySelector(".notifications")
     const loader = document.querySelector(".loader")
@@ -43,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       showNotification(message, type)
     })
     
+    sessionController(session)
   } else {
     window.location = '/'
   }
@@ -52,5 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location = '/'
     }, 2000)
   }
-  sessionController(session)
 })

@@ -13,7 +13,7 @@ export const buildProductDetailView = (product) => {
         <p class="text-gray-600 text-base">${product.description}</p>
         <p class="text-gray-500 text-sm">Publicado por: <span class="font-medium">${product.user.name}</span></p>
         <p class="text-gray-500 text-sm">Fecha de publicación: ${date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-        <p class="text-2xl font-bold text-gray-900 mt-4">${product.price} €</p>
+        <p class="text-2xl font-bold text-emerald-900 mt-4">${product.price} €</p>
 
         <div class="grid grid-cols-1 gap-6 justify-items-center">
           <span class="inline-flex items-center justify-center px-3 py-1 text-sm font-semibold rounded-full

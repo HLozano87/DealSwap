@@ -3,6 +3,7 @@ import { notificationsController } from "./notifications/notificationsController
 import { loadingController } from "./loading/loadingController.js"
 import { buildLoginView } from "./login/loginView.js"
 import { buildHeader, buildFooter } from "./templates/js/createTemplates.js"
+import { sessionController } from "./session/sessionController.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   const headerElement = document.querySelector('header')
@@ -13,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const buildPageLogin = document.querySelector('#login')
   buildPageLogin.innerHTML = buildLoginView()
+  
+  const session = document.querySelector(".session")
 
   const loginForm = buildPageLogin.querySelector("form")
   const notifications = buildPageLogin.querySelector("#notifications")
@@ -37,4 +40,5 @@ document.addEventListener("DOMContentLoaded", () => {
   })
   
   loginController(loginForm)
+  sessionController(session)
 })
