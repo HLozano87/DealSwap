@@ -36,3 +36,11 @@ export const buildRemoveProductButton = () => {
   removeButton.textContent = "Borrar"
   return removeButton
 }
+
+// TODO
+export const buildUpdateProductButton = () => {
+  const updateButton = document.createElement("button")
+  updateButton.className = "bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300"
+  updateButton.textContent = "Editar"
+  return updateButton
+}
