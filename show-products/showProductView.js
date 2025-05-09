@@ -2,16 +2,16 @@
 export const buildProduct = (product) => {
   let productView = `
     <div class="bg-white p-6 rounded-2xl shadow-md flex flex-col space-y-3 hover:shadow-lg transition">
-      <img src="${product.picture}" alt="${product.name}" class="w-full h-40 object-cover rounded-lg mb-4" />
       <a href="/templates/product-detail.html?id=${product.id}">
-        <h3 class="text-lg font-semibold text-emerald-800">${product.name}</h3>
+        <h3 class="text-lg text-center font-semibold text-emerald-800">${product.name}</h3>
       </a>
-      <p class="text-gray-600 text-sm">${product.description}</p>
-      <p class="text-gray-900 font-bold">${product.price} €</p>
+      <img src="${product.picture}" alt="${product.name}" class="w-full h-50 object-cover rounded-lg mb-4" />
+      <p class="text-gray-600 text-center text-sm py-1">${product.description}</p>
+      <p class="text-emerald-900 text-center font-bold">${product.price} €</p>
       <span class="inline-flex justify-center items-center px-2 py-1 text-xs font-medium rounded-full
         ${product.type === 'Compra'
-            ? 'bg-emerald-100 text-emerald-800'
-            : 'bg-blue-100 text-blue-800'}">
+          ? 'bg-emerald-200 text-emerald-800 mx-auto py-[0.4rem] px-12 shadow-lg'
+          : 'bg-blue-200 text-blue-800 mx-auto py-[0.4rem] px-12 shadow-lg'}">
         ${product.type}
       </span>
     </div>

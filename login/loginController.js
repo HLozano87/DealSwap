@@ -18,7 +18,10 @@ export function loginController(loginForm) {
     //TODO especificar error si es de email o password
     if (!emailRegExp.test(userEmail)) {
       const event = CustomEvent('login-error', {
-        detail: error.message
+        detail: {
+          error: message,
+          type:'error'
+        }
       })
       loginForm.dispatchEvent(event)
     } else {
@@ -42,7 +45,10 @@ export function loginController(loginForm) {
       setTimeout(window.location = '/', 2000)
     } catch (error) {
       const event = new CustomEvent('login-error', {
-        detail: error.message
+        detail: {
+          message: 'Credenciales incorrectas.',
+          type: 'error'
+        }
       })
       loginForm.dispatchEvent(event)
     } finally {
